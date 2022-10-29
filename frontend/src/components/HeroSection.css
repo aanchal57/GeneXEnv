@@ -1,0 +1,52 @@
+video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+    object-fit: contain;
+    color:#fff;
+    z-index: 999;
+    user-select: none;
+}
+
+.hero-jumbo {
+    top:43%;
+    display: flex;
+    font-size: 6em;
+    align-content: space-between;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    /* border: 1px white solid; */
+}
+.hero-jumbo > * {
+    text-shadow: 0 0 10px #242424;
+}
+.hero-jumbo > *:nth-child(2) {
+    color: rgb(69, 136, 203);
+}
+@media screen and (min-width: 960px){
+    .hero-jumbo > * {
+        min-width: 14%;
+        /* border: 1px white solid; */
+    }
+    .hero-jumbo > *:last-child {
+        width:150px;
+    }
+}
+.hero-jumbo > i {
+    font-size: 2em;
+    /* margin-left: 20px; */
+}

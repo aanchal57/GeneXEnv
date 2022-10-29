@@ -1,0 +1,13 @@
+.wave-seperator {
+    background: url('../../assets/blue-waves.svg');
+    min-height: 1000px;
+    padding-top:400px;
+    padding-bottom: 100px;
+    text-align:center;
+    font-size: 2em;
+    color: #fff;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}

@@ -1,0 +1,9 @@
+.search {
+    font-size: 1em;
+    user-select:none;
+}
+.search > span {
+    color: rgb(69, 136, 203);
+    font-size: 2em;
+    font-family: 'PT Sans', sans-serif;  
+}
