@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import './SearchBar.css';
+import React, { useEffect, useState } from "react";
+import "./SearchBar.css";
 
-const SearchBar = () => {
+const SearchBar = ({ genes, setSearchResults }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selected, setSelected] = useState("Search By");
 
@@ -10,28 +10,64 @@ const SearchBar = () => {
     "Author Name",
     "Publishers",
     "Genes",
-    "Other Keywords"
+    "Other Keywords",
   ];
+
+  const handleChange = (event) => {
+    if (!event.target.value) return setSearchResults(genes);
+
+    const results = genes.filter(
+      (gene) =>
+        gene.clin_var.includes(event.target.value) ||
+        gene.full_name.includes(event.target.value)
+    );
+
+    setSearchResults(results);
+    console.log(results);
+
+    event.preventDefault();
+  };
 
   const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
   return (
     <React.Fragment>
-
       <div className="container">
-          <div className="search-bar">
-              <div className={`select`} onClick={toggleDropdown}>
-                  <p>{selected}</p>
-                  <i className={isDropdownOpen ? 'fa-sharp fa-solid fa-caret-up' : 'fa-sharp fa-solid fa-caret-down'}></i>
-                  {isDropdownOpen && <ul className={`${isDropdownOpen ? "open-modal" : "close-modal"}`}>
-                    {options.map(option=><li key={option} onClick={event=>setSelected(event.target.outerText)}>{option}</li>)}
-                  </ul>}
-              </div>
-              <input type="text" placeholder=" Search here..."/>
+        <div className="search-bar">
+          <div className={`select`} onClick={toggleDropdown}>
+            <p>{selected}</p>
+            <i
+              className={
+                isDropdownOpen
+                  ? "fa-sharp fa-solid fa-caret-up"
+                  : "fa-sharp fa-solid fa-caret-down"
+              }
+            ></i>
+            {isDropdownOpen && (
+              <ul
+                className={`${isDropdownOpen ? "open-modal" : "close-modal"}`}
+              >
+                {options.map((option) => (
+                  <li
+                    key={option}
+                    onClick={(event) => setSelected(event.target.outerText)}
+                  >
+                    {option}
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
+
+          <input
+            type="text"
+            placeholder=" Search here..."
+            onChange={handleChange}
+          />
+        </div>
       </div>
     </React.Fragment>
-  )
-}
+  );
+};
 
-export default SearchBar
+export default SearchBar;
