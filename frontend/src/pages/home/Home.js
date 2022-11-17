@@ -28,6 +28,7 @@ const Home = () => {
       <div className="wave-seperator">
         <Search />
         <SearchBar genes={genes} setSearchResults={setSearchResults} />
+        
         <ListPage searchResults={searchResults} />
       </div>
 
