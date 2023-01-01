@@ -27,9 +27,10 @@
 .genecard {
   display: flex;
   justify-content: space-evenly;
-  height: 20vh;
+  height: 40vh;
+  text-align:left;
   padding: 1rem;
-  margin: 1rem 23rem;
+  margin: 1rem 10rem;
   background-color: #2f3542;
   font-size: 1.3rem;
 }

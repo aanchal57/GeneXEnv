@@ -18,8 +18,8 @@ const SearchBar = ({ genes, setSearchResults }) => {
 
     const results = genes.filter(
       (gene) =>
-        gene.clin_var.includes(event.target.value) ||
-        gene.full_name.includes(event.target.value)
+        gene.full_name.includes(event.target.value) ||
+        gene.keyword.includes(event.target.value)
     );
 
     setSearchResults(results);
