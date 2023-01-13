@@ -19,9 +19,10 @@ from rest_framework import routers
 from genedata import views
 
 router = routers.DefaultRouter()
-router.register(r'genes', views.GeneView, 'genedata')
+router.register(r'pubgenes', views.GeneView, 'genedata')   
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    # path('geneslist/', GenesView.index, name='main-view'),
 ]
