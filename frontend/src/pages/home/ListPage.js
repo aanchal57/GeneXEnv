@@ -6,14 +6,14 @@ const ListPage = ({ searchResults }) => {
     <GeneCard key={gene.id} gene={gene} />
   ));
 
-  const content = results.length ? (
+  const content = results.length != 23028 ? (
     results
   ) : (
     <article>
-      <p>No results found</p>
+      <p>  </p>
     </article>
   );
-  return <main>{content}</main>;
+  return <main> {content}</main>;
 };
 
 export default ListPage;

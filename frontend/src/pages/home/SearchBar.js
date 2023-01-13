@@ -3,14 +3,11 @@ import "./SearchBar.css";
 
 const SearchBar = ({ genes, setSearchResults }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [selected, setSelected] = useState("Search By");
+  const [selected, setSelected] = useState("Select Environment");
+  const [tempResults, setTempResults] = useState([]);
 
   const options = [
-    "All Categories",
-    "Author Name",
-    "Publishers",
-    "Genes",
-    "Other Keywords",
+     "Alcohol", "Tobacco", "Cigarette", "Exercise", "Physical Activity", "Diet"
   ];
 
   const handleChange = (event) => {
@@ -18,15 +15,30 @@ const SearchBar = ({ genes, setSearchResults }) => {
 
     const results = genes.filter(
       (gene) =>
-        gene.full_name.includes(event.target.value) ||
-        gene.keyword.includes(event.target.value)
+        gene.gene.includes(event.target.value)
     );
 
     setSearchResults(results);
+    setTempResults(results);
     console.log(results);
 
     event.preventDefault();
   };
+
+  const handleEnvSelect = (event) => {
+    setSelected(event.target.outerText)
+    console.log(event.target.outerText)
+    
+    const results = genes.filter(
+      (gene) => gene.gene.includes(event.target.value)
+    );
+
+    console.log(tempResults)
+    const finalresults = tempResults.filter((gene) => gene.environment == event.target.outerText.toLowerCase())
+
+    setSearchResults(finalresults);
+    console.log(finalresults);
+  }
 
   const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
@@ -50,7 +62,7 @@ const SearchBar = ({ genes, setSearchResults }) => {
                 {options.map((option) => (
                   <li
                     key={option}
-                    onClick={(event) => setSelected(event.target.outerText)}
+                    onClick={handleEnvSelect}
                   >
                     {option}
                   </li>
