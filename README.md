@@ -29,3 +29,8 @@ Open [http://localhost:8000](http://localhost:8000) to view it in your browser.
 Visit [http://localhost:8000/admin](http://localhost:8000/admin) to view the django admin panel.
 
 - Note: There's a `.env` file in the `backend` directory containing SECRET_KEY mentioned in the `backend/settings.py` file
+
+## To import the scraped data in Django :
+
+1. pip install django-import-export
+2. Now the following options: `Import`, `Export`, `Add quill blog` must be visbile on the django admin page. Use the `Import` button to import your data in the required format
