@@ -12,7 +12,7 @@ const Search = () => {
           autoStart: true,
           loop: true,
           delay: 40,
-          strings: ["Authors", "Publishers", "Genes", "Keywords"]
+          strings: ["Genes", "Environment", "Full Name"]
         }}
       />
       </span>

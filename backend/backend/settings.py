@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
-    'genedata'
+    'genedata',
+    'import_export'
 ]
 
 MIDDLEWARE = [

@@ -33,11 +33,11 @@ const Navbar = () => {
                     <Link to='/' className='navbar-logo'><div><img src={logo} width={logoSize} height={logoSize} alt="logo_IITJ"/></div></Link>
                     <div className='menu-icon nav-item' onClick={clickHandler}><i className={click ? 'fas fa-times' : 'fas fa-bars'} /></div>
                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-                        <li className='nav-item'><Link to="/" className="nav-links" onClick={closeMobileMenu}>Home</Link></li>
+                        <li className='nav-item'><Link to="/home" className="nav-links" onClick={closeMobileMenu}>Home</Link></li>
+                        {/* <li className='nav-item'><Link to="/genes" className="nav-links" onClick={closeMobileMenu}>Genes</Link></li> */}
                         <li className='nav-item'><Link to="/about" className="nav-links" onClick={closeMobileMenu}>About</Link></li>
-                        <li className='nav-item'><Link to="/contact-us" className="nav-links" onClick={closeMobileMenu}>Contact Us</Link></li>
                     </ul>
-                    {button && <Button buttonStyle='btn--outline'>Sign UP</Button>}
+                    {/* {button && <Button buttonStyle='btn--outline'>Sign UP</Button>} */}
                 </div>
             </div>
         </React.Fragment>

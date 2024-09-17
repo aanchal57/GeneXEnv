@@ -5,11 +5,10 @@ export default function GeneCard({ gene }) {
     <article className="genecard">
       
       <div>
-        <h6>Full Name: {gene.full_name}</h6>
         <h6>Title: {gene.title}</h6>
+        <h6>Abstract: {gene.abstract} </h6>
         <h6>Pubmed_Id: {gene.pubmed_id}</h6>
-        <h6>Keyword: {gene.keyword}</h6>
-        <h6>Article_url:<a href={gene.pubmed_url}> Visit Article</a></h6>
+        <h6><a href={gene.pubmed_url} target="_blank" rel="noopener noreferrer"> Visit Article</a></h6>
       </div>
     </article>
   );

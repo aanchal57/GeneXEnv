@@ -3,33 +3,24 @@ from django.db import models
 # Create your models here.
 
 class pub_Gene(models.Model):
-    full_name = models.CharField(max_length=120)
-    title=models.CharField(max_length=120)
-    pubmed_id=models.IntegerField(max_length=120)
-    keyword=models.CharField(max_length=120)
+    gene = models.CharField(max_length=120, default='gene')
+    environment = models.CharField(max_length=120)
+    title = models.CharField(max_length=120)
+    abstract=models.CharField(max_length=120)
+    pubmed_id=models.IntegerField()
     pubmed_url=models.URLField(max_length=200)
-    # category = models.CharField(max_length=120)
-    # mentioned_by = models.CharField(max_length=120)
-    # full_name = models.CharField(max_length=120)
-    # entrez_gene = models.CharField(max_length=120)
-    # phe_gen_I = models.CharField(max_length=120)
-    # variation_viewer = models.CharField(max_length=120)
-    # clin_var = models.CharField(max_length=120)
-    # gene_cards = models.CharField(max_length=120)
-    # db_snp = models.CharField(max_length=120)
-    # diseases = models.CharField(max_length=120)
-    # sadr = models.CharField(max_length=120)
-    # huge_nav = models.CharField(max_length=120)
-    # wikipedia = models.CharField(max_length=120)
-    # google = models.CharField(max_length=120)
-    # gopubmed = models.CharField(max_length=120)
-    # evs = models.CharField(max_length=120)
-    # he_fal_mp = models.CharField(max_length=120)
-    # my_gene_2 = models.CharField(max_length=120)
-    # twenty_three_and_me = models.CharField(max_length=120)
-    # unit_prot = models.CharField(max_length=120)
-    # omim = models.CharField(max_length=120)
-    # no_of_snps = models.IntegerField()
 
-    def _str_(self):
+    def _str_(self):   
+        return self.category
+
+
+class Gene(models.Model):
+    gene = models.CharField(max_length=120)
+    gene_link = models.URLField(max_length=200)
+    full_name = models.CharField(max_length=120, null=True)
+    diseases=models.CharField(max_length=120, null=True)
+    diseases_link=models.URLField(max_length=200, null=True)
+    no_of_snps = models.IntegerField(default=-1)
+
+    def _str_(self):   
         return self.category

@@ -27,10 +27,29 @@
 .genecard {
   display: flex;
   justify-content: space-evenly;
-  height: 40vh;
+  height: 15vh;
+  margin: 5rem;
   text-align:left;
   padding: 1rem;
   margin: 1rem 10rem;
-  background-color: #2f3542;
   font-size: 1.3rem;
+
+}
+
+.genecard a {
+  text-decoration: none;
+  color: rgb(54, 209, 223);
+}
+
+/*---- About Page Styles -----*/
+
+.about-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 2rem;
+  font-size: 1.2rem;
+  margin: 3rem 10rem;
+
 }

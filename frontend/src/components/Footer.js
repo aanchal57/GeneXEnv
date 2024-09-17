@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <React.Fragment>
         <div className='footer'>
-            Copyright
+
         </div>
     </React.Fragment>
   )
